@@ -86,12 +86,9 @@ while carryOn:
 		speed += 0.05
 	if keys[pygame.K_DOWN]:
 		speed -= 0.05
-	# -- Timer ---
-	total_seconds = frame_count // frame_rate
-	minutes = total_seconds // 60
-	seconds = total_seconds % 60
 
-	score = BONUS * seconds
+
+	score = 1 + frame_count
 
 	# Game logic
 	for car in all_comming_cars:
@@ -130,5 +127,6 @@ while carryOn:
 
 	# Number of frame per second e.g.  60 
 	clock.tick(frame_rate)
+
 pygame.mixer.music.stop()
 pygame.quit()
