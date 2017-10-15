@@ -86,11 +86,11 @@ while carryOn:
 		speed += 0.05
 	if keys[pygame.K_DOWN]:
 		speed -= 0.05
+
 	# -- Timer ---
 	
 
 	score += 1
-
 	# Game logic
 	for car in all_comming_cars:
 		car.moveForward(speed)
@@ -128,5 +128,6 @@ while carryOn:
 
 	# Number of frame per second e.g.  60 
 	clock.tick(frame_rate)
+
 pygame.mixer.music.stop()
 pygame.quit()
