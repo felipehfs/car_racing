@@ -5,10 +5,10 @@ import pygame, random, datetime
 from car import Car
 
 pygame.init()
-BONUS = 1
-frame_count = 0
+
 frame_rate = 60
-starttime = 90
+score = 0
+
 # Colors
 GREEN = (20, 255, 140)
 GREY = (210, 210, 210)
@@ -87,11 +87,9 @@ while carryOn:
 	if keys[pygame.K_DOWN]:
 		speed -= 0.05
 	# -- Timer ---
-	total_seconds = frame_count // frame_rate
-	minutes = total_seconds // 60
-	seconds = total_seconds % 60
+	
 
-	score = BONUS * seconds
+	score += 1
 
 	# Game logic
 	for car in all_comming_cars:
@@ -107,7 +105,7 @@ while carryOn:
 		carryOn = False
 		
 	all_sprites_list.update()
-	frame_count += 1
+
 	#Drawing on screen
 	screen.fill(GREEN)
 	#Draw the road
