@@ -63,10 +63,12 @@ all_comming_cars.add(car2)
 all_comming_cars.add(car3)
 all_comming_cars.add(car4)
 
+# song configurations
+pygame.mixer.music.load('assets/songs/song_one.mp3')
 
 carryOn = True
 clock = pygame.time.Clock()
-
+pygame.mixer.music.play(-1)
 while carryOn:
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
@@ -98,7 +100,6 @@ while carryOn:
 			car.changeSpeed(random.randint(50, 100))
 			car.repaint(random.choice(colorList))
 			car.rect.y = -200
-			BONUS += 1
 	#Check if there is a car collision
 	car_collision_list = pygame.sprite.spritecollide(playerCar, all_comming_cars, False)
 	for car in car_collision_list:
@@ -129,5 +130,5 @@ while carryOn:
 
 	# Number of frame per second e.g.  60 
 	clock.tick(frame_rate)
-
+pygame.mixer.music.stop()
 pygame.quit()
