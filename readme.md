@@ -8,4 +8,4 @@ Simple racing game make in pygame
 
 ## Instalation
 
-pip install -r pipfile.txt
+pip install -r requirements.txt
