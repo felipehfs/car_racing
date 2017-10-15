@@ -1,4 +1,4 @@
-#Car racing
+## Car racing
 Simple racing game make in pygame 
 
 ## Instalation
